@@ -20,21 +20,21 @@ public class Program {
 		Locale.setDefault(Locale.US);
 		Scanner scanner = new Scanner(System.in);
 
-		//Get the path of the file where the products are inserted
+		//Obter o caminho do arquivo onde os produtos são inseridos
 		System.out.println("Enter the file path:");
 		String mainFileStr = scanner.nextLine();
 		scanner.close();
 
-		//Object to pass a path
+		//Objeto para passar um caminho
 		File mainFile = new File(mainFileStr);
 
-		//get the parent path of the main File object
+		//obter o caminho pai do objeto File principal
 		String folderPath = mainFile.getParent();
 
-		//creating the out subfolder
+		//criando a subpasta out
 		boolean createdOut = new File(folderPath + "\\out").mkdir();
 
-		//creating file inside out sub folder
+		//criando arquivo dentro da subpasta out
 		String subFolderPath = (folderPath + "\\out\\summary.csv");
 
 		try (BufferedReader bufferReader = new BufferedReader(new FileReader(mainFileStr))){
